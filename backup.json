@@ -1,0 +1,411 @@
+{
+  "chantiers": [
+    {
+      "numero": "200557",
+      "nom": "STATION D EPURATION ",
+      "date": "2026-04-20",
+      "maitreOuvrage": "smgeag",
+      "maitreOeuvre": "sce",
+      "lieu": "PETIT BOURG ",
+      "totalMarcheHT": 200000
+    },
+    {
+      "numero": "200558",
+      "nom": "ALEXANDRE VENET",
+      "date": "2026-04-20",
+      "maitreOuvrage": "SMGEAG",
+      "maitreOeuvre": "EGIS",
+      "lieu": "baillif",
+      "totalMarcheHT": 100000
+    },
+    {
+      "numero": "200559",
+      "nom": "STATION D EPURATION ",
+      "date": "2026-04-22",
+      "maitreOuvrage": "smgeag",
+      "maitreOeuvre": "",
+      "lieu": "",
+      "totalMarcheHT": 155000
+    },
+    {
+      "numero": "200555",
+      "nom": "citerne",
+      "maitreOuvrage": "smgeag",
+      "maitreOeuvre": "sce",
+      "lieu": "baillif",
+      "totalMarcheHT": "100000"
+    }
+  ],
+  "maintenances": [],
+  "depenses": [
+    {
+      "id": 1776706610818,
+      "numero": "200557",
+      "nom": "STATION D EPURATION ",
+      "type": "Frais généraux",
+      "phase": "Initial",
+      "fournisseur": "Interne",
+      "facture": "",
+      "date": "2026-04-20",
+      "description": "Frais généraux automatiques 8%",
+      "quantite": "1",
+      "unite": "U",
+      "montant": "16000",
+      "verrouillee": true
+    },
+    {
+      "id": 1776706725695,
+      "numero": "200557",
+      "nom": "STATION D EPURATION ",
+      "type": "Main d'oeuvre",
+      "phase": "Initial",
+      "fournisseur": "ROXANE",
+      "facture": "",
+      "date": "2026-04-20",
+      "description": "Feuille d'heure - ROXANE",
+      "quantite": "7",
+      "unite": "H",
+      "montant": "75",
+      "source": "feuilleHeure",
+      "feuilleHeureId": 1776706725694,
+      "verrouillee": true
+    },
+    {
+      "id": 1776708928585,
+      "numero": "200558",
+      "nom": "ALEXANDRE VENET",
+      "type": "Frais généraux",
+      "phase": "Initial",
+      "fournisseur": "Interne",
+      "facture": "",
+      "date": "2026-04-20",
+      "description": "Frais généraux automatiques 8%",
+      "quantite": "1",
+      "unite": "U",
+      "montant": "8000",
+      "verrouillee": true
+    },
+    {
+      "id": 1776855537336,
+      "numero": "200559",
+      "nom": "STATION D EPURATION ",
+      "type": "Frais généraux",
+      "phase": "Initial",
+      "fournisseur": "Interne",
+      "facture": "",
+      "date": "2026-04-22",
+      "description": "Frais généraux automatiques 8%",
+      "quantite": "1",
+      "unite": "U",
+      "montant": "12400",
+      "verrouillee": true
+    },
+    {
+      "id": 1776855591114,
+      "numero": "200559",
+      "nom": "STATION D EPURATION ",
+      "type": "Sous-traitance",
+      "phase": "Initial",
+      "fournisseur": "",
+      "facture": "",
+      "date": "2026-04-22",
+      "description": "",
+      "quantite": "1",
+      "unite": "",
+      "montant": "58000"
+    },
+    {
+      "id": 1776882864565,
+      "numero": "200558",
+      "nom": "ALEXANDRE VENET",
+      "type": "Main d'oeuvre",
+      "phase": "Initial",
+      "fournisseur": "",
+      "facture": "",
+      "date": "2026-04-01",
+      "description": "Feuille d'heure -  - Cadre",
+      "quantite": "5000",
+      "unite": "H",
+      "montant": "75",
+      "source": "feuilleHeure",
+      "feuilleHeureId": 1776882864564,
+      "verrouillee": true
+    },
+    {
+      "id": 1776688873683,
+      "numero": "200555",
+      "nom": "citerne",
+      "type": "Fourniture",
+      "phase": "Initial",
+      "fournisseur": "POINT PLOMBERIE",
+      "facture": "FA20251",
+      "description": "CITERNE",
+      "quantite": "2",
+      "unite": "",
+      "montant": "3500"
+    },
+    {
+      "id": 1776696194357,
+      "numero": "200555",
+      "nom": "citerne",
+      "type": "Main d'oeuvre",
+      "phase": "Initial",
+      "fournisseur": "",
+      "facture": "",
+      "description": "",
+      "quantite": "500",
+      "unite": "H",
+      "montant": "150"
+    }
+  ],
+  "utilisateurs": [
+    {
+      "nom": "Alexandre Venet",
+      "motdepasse": "HDS2026",
+      "role": "Directeur",
+      "droits": {
+        "chantiers": true,
+        "depenses": true,
+        "feuillesHeures": true,
+        "interventions": true,
+        "photos": true,
+        "reglages": true
+      }
+    },
+    {
+      "nom": "VIVILLE",
+      "motdepasse": "Hds1458",
+      "role": "TECHNICIEN ",
+      "droits": {
+        "chantiers": false,
+        "depenses": false,
+        "feuillesHeures": true,
+        "interventions": true,
+        "photos": true,
+        "reglages": false
+      }
+    },
+    {
+      "nom": "RIANI",
+      "motdepasse": "Hds1447",
+      "role": "SECRETAIRE",
+      "droits": {
+        "chantiers": true,
+        "depenses": true,
+        "feuillesHeures": true,
+        "interventions": true,
+        "photos": true,
+        "reglages": false
+      }
+    }
+  ],
+  "photos": [
+    {
+      "chantier": "200559",
+      "description": "STEP",
+      "fichier": "/uploads/1776881178494-photo.jpeg"
+    }
+  ],
+  "reglages": {
+    "pourcentageFraisGeneraux": 8,
+    "prixHeureTravail": 75,
+    "prixHeureCadre": 75,
+    "prixHeureTechnicien": 55
+  },
+  "feuillesHeures": [
+    {
+      "id": 1776706725694,
+      "numero": "200557",
+      "nom": "STATION D EPURATION ",
+      "personne": "ROXANE",
+      "date": "2026-04-20",
+      "heures": 7,
+      "prixHeure": 75,
+      "total": 525
+    },
+    {
+      "id": 1776882864564,
+      "numero": "200558",
+      "nom": "ALEXANDRE VENET",
+      "role": "Cadre",
+      "personne": "",
+      "date": "2026-04-01",
+      "heures": 5000,
+      "prixHeure": 75,
+      "total": 375000
+    }
+  ],
+  "interventions": [
+    {
+      "id": 1776795855385,
+      "numero": "200557",
+      "nom": "STATION D EPURATION ",
+      "client": "DCDCXED",
+      "site": "ZDXAZ",
+      "typeInstallation": "citerne eau potable",
+      "typeIntervention": "entretien",
+      "datePrevue": "2026-04-24",
+      "heurePrevue": "15:00",
+      "technicien": "VIVILLE ",
+      "priorite": "normale",
+      "statut": "à planifier",
+      "pompe1Heure": "",
+      "pompe1Kwh": "",
+      "pompe1Etat": "",
+      "pompe2Heure": "",
+      "pompe2Kwh": "",
+      "pompe2Etat": "",
+      "degrilleur": "",
+      "flotteur": "",
+      "alarme": "",
+      "nettoyage": "",
+      "observations": "",
+      "anomalies": "",
+      "signature": "data:image/png;base64,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"
+    },
+    {
+      "id": 1776795942877,
+      "numero": "200558",
+      "nom": "ALEXANDRE VENET",
+      "client": "DCDCXED",
+      "site": "PETIT BOURG",
+      "typeInstallation": "citerne eau potable",
+      "typeIntervention": "entretien",
+      "datePrevue": "2026-04-25",
+      "heurePrevue": "14:25",
+      "technicien": "VIVILLE ",
+      "priorite": "normale",
+      "statut": "planifiée",
+      "pompe1Heure": "",
+      "pompe1Kwh": "",
+      "pompe1Etat": "",
+      "pompe2Heure": "",
+      "pompe2Kwh": "",
+      "pompe2Etat": "",
+      "degrilleur": "",
+      "flotteur": "",
+      "alarme": "",
+      "nettoyage": "",
+      "observations": "",
+      "anomalies": "",
+      "signature": "data:image/png;base64,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"
+    }
+  ],
+  "archives": [
+    {
+      "id": 1776886313266,
+      "dateArchivage": "2026-04-22T19:31:53.266Z",
+      "numero": "200556",
+      "chantier": {
+        "numero": "200556",
+        "nom": "MICRO STATION ",
+        "maitreOuvrage": "PARTICULIER ",
+        "maitreOeuvre": "",
+        "lieu": "POINTE A PITRE ",
+        "totalMarcheHT": 100000
+      },
+      "depenses": [
+        {
+          "id": 1776696958499,
+          "numero": "200556",
+          "nom": "MICRO STATION ",
+          "type": "Frais généraux",
+          "phase": "Initial",
+          "fournisseur": "Interne",
+          "facture": "",
+          "description": "Frais généraux automatiques 8%",
+          "quantite": "1",
+          "unite": "U",
+          "montant": "8000"
+        },
+        {
+          "id": 1776706499375,
+          "numero": "200556",
+          "nom": "MICRO STATION ",
+          "type": "Main d'oeuvre",
+          "phase": "Initial",
+          "fournisseur": "VIVILLE ABRAHAM",
+          "facture": "",
+          "date": "2026-04-20",
+          "description": "Feuille d'heure - VIVILLE ABRAHAM",
+          "quantite": "7",
+          "unite": "H",
+          "montant": "55",
+          "source": "feuilleHeure",
+          "feuilleHeureId": 1776706499374,
+          "verrouillee": true
+        },
+        {
+          "id": 1776716635604,
+          "numero": "200556",
+          "nom": "MICRO STATION ",
+          "type": "Main d'oeuvre",
+          "phase": "Initial",
+          "fournisseur": "ROXANE ",
+          "facture": "",
+          "date": "2026-04-18",
+          "description": "Feuille d'heure - ROXANE  - Cadre",
+          "quantite": "7",
+          "unite": "H",
+          "montant": "75",
+          "source": "feuilleHeure",
+          "feuilleHeureId": 1776716635603,
+          "verrouillee": true
+        }
+      ],
+      "feuillesHeures": [
+        {
+          "id": 1776706499374,
+          "numero": "200556",
+          "nom": "MICRO STATION ",
+          "personne": "VIVILLE ABRAHAM",
+          "date": "2026-04-20",
+          "heures": 7,
+          "prixHeure": 55,
+          "total": 385
+        },
+        {
+          "id": 1776716635603,
+          "numero": "200556",
+          "nom": "MICRO STATION ",
+          "role": "Cadre",
+          "personne": "ROXANE ",
+          "date": "2026-04-18",
+          "heures": 7,
+          "prixHeure": 75,
+          "total": 525
+        }
+      ],
+      "interventions": [
+        {
+          "id": 1776784854887,
+          "numero": "200556",
+          "nom": "MICRO STATION ",
+          "client": "DCDCXED",
+          "site": "ZDXAZ",
+          "typeInstallation": "citerne eau potable",
+          "typeIntervention": "entretien",
+          "datePrevue": "2026-04-21",
+          "heurePrevue": "11:19",
+          "technicien": "",
+          "priorite": "normale",
+          "statut": "terminée",
+          "pompe1Heure": "1222",
+          "pompe1Kwh": "111111",
+          "pompe1Etat": "MARCHE",
+          "pompe2Heure": "3333",
+          "pompe2Kwh": "3333",
+          "pompe2Etat": "MARCHE",
+          "degrilleur": "Oui",
+          "flotteur": "Oui",
+          "alarme": "Oui",
+          "nettoyage": "Oui",
+          "observations": "RAS",
+          "anomalies": "",
+          "signature": "data:image/png;base64,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"
+        }
+      ],
+      "photos": []
+    }
+  ]
+}
