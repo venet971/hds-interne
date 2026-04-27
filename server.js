@@ -7,7 +7,7 @@ const XLSX = require('xlsx');
 const { Document, Packer, Paragraph, TextRun, ImageRun } = require('docx');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(session({
   secret: 'hds-secret',
@@ -2640,6 +2640,6 @@ app.get('/planning-pdf', verifierConnexion, (req, res) => {
   `);
 });
 
-app.listen(PORT, () => {
-  console.log('HDS Pro lancé sur http://localhost:3000');
+app.listen(PORT, '0.0.0.0', () => {
+  console.log('HDS Pro lancé sur port ' + PORT);
 });
