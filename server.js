@@ -156,6 +156,13 @@ function pageConnexion(message = '') {
       </style>
     </head>
     <body>
+      <div class="menu-mobile">
+  <button onclick="showBloc('chantiers')">Chantiers</button>
+  <button onclick="showBloc('depenses')">Dépenses</button>
+  <button onclick="showBloc('interventions')">Interventions</button>
+  <button onclick="showBloc('photos')">Photos</button>
+  <button onclick="showBloc('reglages')">Réglages</button>
+</div>
       <div class="header">
         <img src="/uploads/logo.jpg" alt="Logo Hydro Dom Solutions">
         <div class="titre">HDS Interne</div>
@@ -944,6 +951,14 @@ button:hover { opacity:0.9; }
       ${blocPhotos}
 
       <script>
+      function showBloc(id) {
+  const blocs = document.querySelectorAll('.bloc');
+  blocs.forEach(b => b.style.display = 'none');
+
+  const actif = document.getElementById(id);
+  if (actif) actif.style.display = 'block';
+}
+
         function send(url, data) {
           fetch(url, {
             method: 'POST',
@@ -1488,6 +1503,19 @@ button:hover { opacity:0.9; }
     },
     body: JSON.stringify({ id })
   }).then(() => location.reload());
+}
+
+function showBloc(id) {
+  const blocs = document.querySelectorAll('.bloc');
+
+  blocs.forEach(b => {
+    b.style.display = 'none';
+  });
+
+  const actif = document.getElementById(id);
+  if (actif) {
+    actif.style.display = 'block';
+  }
 }
       </script>
     </body>
@@ -2178,6 +2206,24 @@ const reste = totalMarche - totalDepenses;
       <meta charset="utf-8">
       <title>Dossier archivé</title>
       <style>
+       .menu-mobile {
+  display:flex;
+  overflow-x:auto;
+  background:#1e293b;
+  padding:10px;
+}
+
+.menu-mobile button {
+  flex:1;
+  margin:3px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:6px;
+  padding:10px;
+  font-size:14px;
+}
+
         body { font-family: Arial; padding:20px; }
         .bloc { border:1px solid #ccc; padding:10px; margin:10px 0; border-radius:8px; }
       </style>
