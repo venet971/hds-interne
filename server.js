@@ -602,7 +602,7 @@ const htmlArchives = (data.archives || []).map(a => `
   ` : '';
 
   const blocChantiers = droits.chantiers ? `
-    <div class="bloc">
+    <div class="bloc" id="chantiers">
       <h3>Chantiers</h3>
       <input id="c_numero" placeholder="Numéro chantier">
       <input id="c_nom" placeholder="Nom chantier">
@@ -624,7 +624,7 @@ const htmlArchives = (data.archives || []).map(a => `
   ` : '';
 
   const blocDepenses = droits.depenses ? `
-    <div class="bloc">
+    <div class="bloc" id="depenses">
       <h3>Dépenses chantier</h3>
       <p><strong>Initial :</strong> ${totalInitial} €</p>
       <p><strong>En cours :</strong> ${totalEncours} €</p>
@@ -733,7 +733,7 @@ const htmlArchives = (data.archives || []).map(a => `
   ` : '';
 
   const blocInterventions = droits.interventions ? `
-    <div class="bloc">
+    <div class="bloc" id="interventions">
       <h3>Interventions</h3>
 
       <input id="i_id" type="hidden">
@@ -845,7 +845,7 @@ const htmlArchives = (data.archives || []).map(a => `
   ` : '';
 
   const blocPhotos = droits.photos ? `
-    <div class="bloc">
+    <div class="bloc" id="photos">
       <h3>Photos chantier</h3>
       <form action="/photo" method="POST" enctype="multipart/form-data">
         <select name="chantier" required>
