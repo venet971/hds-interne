@@ -94,6 +94,65 @@ function verifierConnexion(req, res, next) {
   next();
 }
 
+function pageConnexion(message = '') {
+  return `
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Connexion HDS Interne</title>
+      <style>
+        body { font-family: Arial; background:#f3f4f6; margin:0; padding:0; }
+        .header { text-align:center; background:#1e293b; padding:15px; }
+        .header img { height:80px; }
+        .header .titre { color:white; font-size:20px; margin-top:8px; }
+        .box {
+          max-width: 420px;
+          margin: 60px auto;
+          background: white;
+          padding: 25px;
+          border-radius: 12px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        input {
+          width: 100%;
+          padding: 10px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border:1px solid #ccc;
+          border-radius:6px;
+        }
+        button {
+          width: 100%;
+          padding: 10px;
+          background:#2563eb;
+          color:white;
+          border:none;
+          border-radius:6px;
+          cursor:pointer;
+        }
+        .msg { color:red; margin-bottom:10px; }
+      </style>
+    </head>
+    <body>
+      <div class="header">
+        <img src="/uploads/logo.jpg" alt="Logo Hydro Dom Solutions">
+        <div class="titre">HDS Interne</div>
+      </div>
+
+      <div class="box">
+        <h2>Connexion</h2>
+        ${message ? `<div class="msg">${message}</div>` : ''}
+        <form method="POST" action="/login">
+          <input type="text" name="nom" placeholder="Nom" required>
+          <input type="password" name="motdepasse" placeholder="Mot de passe" required>
+          <button type="submit">Se connecter</button>
+        </form>
+      </div>
+    </body>
+    </html>
+  `;
+}
+
 /* ================= ROUTES ================= */
 
 app.get('/', (req, res) => {
