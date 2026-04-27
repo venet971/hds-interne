@@ -118,7 +118,8 @@ function pageConnexion(message = '') {
   return `
     <html>
     <head>
-      <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Connexion HDS Interne</title>
       <style>
         body { font-family: Arial; background:#f3f4f6; margin:0; padding:0; }
@@ -873,19 +874,41 @@ const htmlArchives = (data.archives || []).map(a => `
           border-radius:12px;
           box-shadow:0 2px 8px rgba(0,0,0,0.1);
         }
-        input, button, select, textarea { margin:5px; padding:8px; }
-        input, select, textarea { border:1px solid #ccc; border-radius:6px; }
-        textarea { width:95%; min-height:70px; }
-        button:hover { opacity:0.9; }
-        .logout { background:#dc2626; }
-        .message-ok {
-          background:#dcfce7;
-          color:#166534;
-          padding:10px;
-          margin:15px 20px;
-          border-radius:8px;
-          border:1px solid #bbf7d0;
-        }
+        input, button, select, textarea {
+  margin:5px;
+  padding:12px;
+  width:100%;
+  font-size:16px;
+  box-sizing:border-box;
+}
+
+input, select, textarea {
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+
+textarea {
+  width:100%;
+  min-height:80px;
+}
+
+button {
+  width:100%;
+  font-size:16px;
+}
+
+button:hover { opacity:0.9; }
+
+.logout { background:#dc2626; }
+
+.message-ok {
+  background:#dcfce7;
+  color:#166534;
+  padding:10px;
+  margin:15px 10px;
+  border-radius:8px;
+  border:1px solid #bbf7d0;
+}
         .message-ko {
           background:#fee2e2;
           color:#991b1b;
