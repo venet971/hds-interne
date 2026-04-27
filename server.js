@@ -98,9 +98,16 @@ function verifierConnexion(req, res, next) {
 
 app.get('/', (req, res) => {
   if (!req.session.user) {
-    return res.send('<h2>Connexion requise</h2>');
+    res.send(pageConnexion());
+    return;
   }
-  res.send("Application HDS OK");
+
+  const data = lireDonnees();
+  const userActuel = data.utilisateurs.find(u => u.nom === req.session.user.nom) || req.session.user;
+  req.session.user = userActuel;
+
+  const message = req.query.message || '';
+  res.send(pageDashboard(data, userActuel, message));
 });
 
 /* ================= LOGIN ================= */
