@@ -860,66 +860,68 @@ const htmlArchives = (data.archives || []).map(a => `
       <meta charset="utf-8">
       <title>HDS Interne</title>
       <style>
-        body { font-family: Arial; background:#f3f4f6; margin:0; padding:0; }
-        .top {
-          background:white;
-          padding:10px 15px;
-          display:flex;
-          justify-content:space-between;
-          align-items:center;
-        }
-        .bloc {
-          background:white;
-          padding:20px;
-          margin:20px;
-          border-radius:12px;
-          box-shadow:0 2px 8px rgba(0,0,0,0.1);
-        }
-        input, button, select, textarea {
-  margin:5px;
-  padding:12px;
-  width:100%;
-  font-size:16px;
-  box-sizing:border-box;
+        body {
+  font-family: Arial;
+  background:#f3f4f6;
+  margin:0;
+  padding:0;
 }
 
+/* HEADER */
+.top {
+  background:white;
+  padding:10px;
+  text-align:center;
+}
+
+/* BLOCS */
+.bloc {
+  background:white;
+  padding:15px;
+  margin:10px;
+  border-radius:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* INPUTS */
 input, select, textarea {
-  border:1px solid #ccc;
-  border-radius:8px;
-}
-
-textarea {
   width:100%;
-  min-height:80px;
+  padding:14px;
+  font-size:16px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  margin:8px 0;
 }
 
+/* TEXTAREA */
+textarea {
+  min-height:90px;
+}
+
+/* BOUTONS */
 button {
   width:100%;
+  padding:14px;
   font-size:16px;
+  border-radius:10px;
+  border:none;
+  background:#2563eb;
+  color:white;
+  margin-top:8px;
 }
 
-button:hover { opacity:0.9; }
-
-.logout { background:#dc2626; }
-
-.message-ok {
-  background:#dcfce7;
-  color:#166534;
-  padding:10px;
-  margin:15px 10px;
-  border-radius:8px;
-  border:1px solid #bbf7d0;
+/* BOUTON HOVER */
+button:hover {
+  opacity:0.9;
 }
-        .message-ko {
-          background:#fee2e2;
-          color:#991b1b;
-          padding:10px;
-          margin:15px 20px;
-          border-radius:8px;
-          border:1px solid #fecaca;
-        }
 
- .menu-mobile {
+/* LOGOUT */
+.logout {
+  background:#dc2626;
+}
+
+/* MENU MOBILE */
+.menu-mobile {
   display:flex;
   overflow-x:auto;
   gap:6px;
@@ -931,25 +933,30 @@ button:hover { opacity:0.9; }
 }
 
 .menu-mobile button {
-  min-width:110px;
+  min-width:120px;
   background:#2563eb;
   color:white;
   border:none;
-  border-radius:8px;
-  padding:10px;
+  border-radius:10px;
+  padding:12px;
   font-size:14px;
 }
 
-@media (max-width: 700px) {
-  .bloc {
-    margin:10px;
-    padding:15px;
-  }
+/* MESSAGES */
+.message-ok {
+  background:#dcfce7;
+  color:#166534;
+  padding:10px;
+  margin:10px;
+  border-radius:8px;
+}
 
-  .top {
-    display:block;
-    text-align:center;
-  }
+.message-ko {
+  background:#fee2e2;
+  color:#991b1b;
+  padding:10px;
+  margin:10px;
+  border-radius:8px;
 }
       </style>
     </head>
