@@ -1024,20 +1024,27 @@ img {
   justify-content: space-around;
   padding: 8px 0;
   z-index: 1000;
+  border-top: 2px solid #1e293b;
 }
 
 .bottom-nav button {
   background: none;
   border: none;
-  color: white;
+  color: #94a3b8;
   font-size: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 0.2s;
 }
 
 .bottom-nav button span {
   font-size: 18px;
+}
+
+.bottom-nav button.active {
+  color: #3b82f6;
+  transform: scale(1.1);
 }
 
 body {
@@ -1047,35 +1054,35 @@ body {
     </head>
     <body>
           <div class="bottom-nav">
-  <button onclick="showBloc('chantiers')">
-    <span>🏗</span>
-    Chantiers
-  </button>
+  <button onclick="changeTab(this, 'chantiers')">
+  <span>🏗</span>
+  Chantiers
+</button>
 
-  <button onclick="showBloc('depenses')">
-    <span>💰</span>
-    Dépenses
-  </button>
+  <button onclick="changeTab(this, 'depenses')">
+  <span>💰</span>
+  Dépenses
+</button>
 
-  <button onclick="showBloc('feuillesHeures')">
-    <span>⏱</span>
-    Heures
-  </button>
+<button onclick="changeTab(this, 'feuillesHeures')">
+  <span>⏱</span>
+  Heures
+</button>
 
-  <button onclick="showBloc('interventions')">
-    <span>🔧</span>
-    Interventions
-  </button>
+<button onclick="changeTab(this, 'interventions')">
+  <span>🔧</span>
+  Interventions
+</button>
 
-  <button onclick="showBloc('photos')">
-    <span>📸</span>
-    Photos
-  </button>
+<button onclick="changeTab(this, 'photos')">
+  <span>📸</span>
+  Photos
+</button>
 
-  <button onclick="showBloc('reglages')">
-    <span>⚙️</span>
-    Réglages
-  </button>
+<button onclick="changeTab(this, 'reglages')">
+  <span>⚙️</span>
+  Réglages
+</button>
 </div>
      
       <div class="header-app">
@@ -1102,6 +1109,17 @@ body {
       ${blocPhotos}
 
       <script>
+        function changeTab(btn, id) {
+  // enlève actif partout
+  document.querySelectorAll('.bottom-nav button')
+    .forEach(b => b.classList.remove('active'));
+
+  // active bouton cliqué
+  btn.classList.add('active');
+
+  // affiche bloc
+  showBloc(id);
+}
         function send(url, data) {
           fetch(url, {
             method: 'POST',
@@ -1663,6 +1681,9 @@ function showBloc(id) {
 
 window.onload = function () {
   showBloc('feuillesHeures');
+
+  const btn = document.querySelector('.bottom-nav button:nth-child(3)');
+  if (btn) btn.classList.add('active');
 };
       </script>
     </body>
