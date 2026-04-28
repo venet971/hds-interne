@@ -1,4 +1,4 @@
-{{
+{
   "name": "HDS Interne",
   "short_name": "HDS",
   "start_url": "/",
@@ -12,5 +12,4 @@
       "type": "image/png"
     }
   ]
-}
 }
