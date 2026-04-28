@@ -119,6 +119,8 @@ function pageConnexion(message = '') {
   return `
     <html>
     <head>
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#2563eb">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Connexion HDS Interne</title>
@@ -858,6 +860,8 @@ const htmlArchives = (data.archives || []).map(a => `
   return `
     <html>
     <head>
+      <link rel="manifest" href="/manifest.json">
+      <meta name="theme-color" content="#2563eb">
       <meta charset="utf-8">
       <title>HDS Interne</title>
       <style>

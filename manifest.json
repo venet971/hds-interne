@@ -1,10 +1,10 @@
-{
+{{
   "name": "HDS Interne",
   "short_name": "HDS",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#1e293b",
+  "background_color": "#1e293b",
+  "theme_color": "#2563eb",
   "icons": [
     {
       "src": "/icon.png",
@@ -12,4 +12,5 @@
       "type": "image/png"
     }
   ]
+}
 }
