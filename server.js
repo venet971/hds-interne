@@ -1609,9 +1609,9 @@ function showBloc(id) {
   }
 }
 
-window.onload = function() {
-  showBloc('chantiers');
-}
+window.onload = function () {
+  showBloc('feuillesHeures');
+};
       </script>
     </body>
     </html>
