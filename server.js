@@ -1013,10 +1013,70 @@ img {
   .header-app img {
     height:50px;
   }
+
+  .bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0f172a;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-nav button span {
+  font-size: 18px;
+}
+
+body {
+  padding-bottom: 80px; /* IMPORTANT sinon ça cache le contenu */
 }
       </style>
     </head>
     <body>
+          <div class="bottom-nav">
+  <button onclick="showBloc('chantiers')">
+    <span>🏗</span>
+    Chantiers
+  </button>
+
+  <button onclick="showBloc('depenses')">
+    <span>💰</span>
+    Dépenses
+  </button>
+
+  <button onclick="showBloc('feuillesHeures')">
+    <span>⏱</span>
+    Heures
+  </button>
+
+  <button onclick="showBloc('interventions')">
+    <span>🔧</span>
+    Interventions
+  </button>
+
+  <button onclick="showBloc('photos')">
+    <span>📸</span>
+    Photos
+  </button>
+
+  <button onclick="showBloc('reglages')">
+    <span>⚙️</span>
+    Réglages
+  </button>
+</div>
         <div class="menu-mobile">
   <button onclick="showBloc('reglages')">Réglages</button>
   <button onclick="showBloc('planning')">Planning</button>
