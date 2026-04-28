@@ -1077,15 +1077,7 @@ body {
     Réglages
   </button>
 </div>
-        <div class="menu-mobile">
-  <button onclick="showBloc('reglages')">Réglages</button>
-  <button onclick="showBloc('planning')">Planning</button>
-  <button onclick="showBloc('chantiers')">Chantiers</button>
-  <button onclick="showBloc('depenses')">Dépenses</button>
-  <button onclick="showBloc('feuillesHeures')">Heures</button>
-  <button onclick="showBloc('interventions')">Interventions</button>
-  <button onclick="showBloc('photos')">Photos</button>
-</div>
+     
       <div class="header-app">
   <img src="/icon.png" alt="Logo HDS"><br>
   <div class="titre">HDS Interne</div>
