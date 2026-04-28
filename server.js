@@ -865,72 +865,96 @@ const htmlArchives = (data.archives || []).map(a => `
       <meta charset="utf-8">
       <title>HDS Interne</title>
       <style>
-        body {
-  font-family: Arial;
-  background:#f3f4f6;
+       body {
+  font-family: Arial, sans-serif;
+  background:#f1f5f9;
   margin:0;
   padding:0;
+  color:#0f172a;
 }
 
-/* HEADER */
+.header-app {
+  text-align:center;
+  background:linear-gradient(135deg, #0f172a, #2563eb);
+  padding:18px 10px;
+  color:white;
+}
+
+.header-app img {
+  height:55px;
+  background:white;
+  border-radius:12px;
+  padding:5px;
+}
+
+.header-app .titre {
+  font-size:22px;
+  font-weight:bold;
+  margin-top:8px;
+}
+
 .top {
   background:white;
-  padding:10px;
+  padding:12px;
   text-align:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
 
-/* BLOCS */
 .bloc {
   background:white;
-  padding:15px;
-  margin:10px;
-  border-radius:12px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  padding:16px;
+  margin:12px;
+  border-radius:18px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.10);
 }
 
-/* INPUTS */
+.bloc h3 {
+  margin-top:0;
+  color:#1e293b;
+  font-size:22px;
+}
+
 input, select, textarea {
   width:100%;
   padding:14px;
   font-size:16px;
-  border-radius:10px;
-  border:1px solid #ccc;
+  border-radius:12px;
+  border:1px solid #cbd5e1;
   margin:8px 0;
+  box-sizing:border-box;
+  background:#f8fafc;
 }
 
-/* TEXTAREA */
 textarea {
   min-height:90px;
 }
 
-/* BOUTONS */
 button {
   width:100%;
   padding:14px;
   font-size:16px;
-  border-radius:10px;
+  border-radius:12px;
   border:none;
   background:#2563eb;
   color:white;
   margin-top:8px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-/* BOUTON HOVER */
 button:hover {
   opacity:0.9;
 }
 
-/* LOGOUT */
 .logout {
   background:#dc2626;
 }
 
-/* MENU MOBILE */
 .menu-mobile {
   display:flex;
   overflow-x:auto;
-  gap:6px;
-  background:#1e293b;
+  gap:8px;
+  background:#0f172a;
   padding:10px;
   position:sticky;
   top:0;
@@ -939,29 +963,56 @@ button:hover {
 
 .menu-mobile button {
   min-width:120px;
-  background:#2563eb;
+  background:#334155;
   color:white;
   border:none;
-  border-radius:10px;
+  border-radius:999px;
   padding:12px;
   font-size:14px;
+  margin:0;
+  white-space:nowrap;
 }
 
-/* MESSAGES */
+.menu-mobile button:hover {
+  background:#2563eb;
+}
+
 .message-ok {
   background:#dcfce7;
   color:#166534;
-  padding:10px;
-  margin:10px;
-  border-radius:8px;
+  padding:12px;
+  margin:12px;
+  border-radius:12px;
+  border:1px solid #bbf7d0;
 }
 
 .message-ko {
   background:#fee2e2;
   color:#991b1b;
-  padding:10px;
-  margin:10px;
-  border-radius:8px;
+  padding:12px;
+  margin:12px;
+  border-radius:12px;
+  border:1px solid #fecaca;
+}
+
+img {
+  max-width:100%;
+}
+
+@media (max-width:700px) {
+  .bloc {
+    margin:10px;
+    padding:14px;
+  }
+
+  .top {
+    display:block;
+    text-align:center;
+  }
+
+  .header-app img {
+    height:50px;
+  }
 }
       </style>
     </head>
@@ -975,10 +1026,10 @@ button:hover {
   <button onclick="showBloc('interventions')">Interventions</button>
   <button onclick="showBloc('photos')">Photos</button>
 </div>
-      <div style="text-align:center; background:#1e293b; padding:15px;">
-        <img src="/uploads/logo.jpg" style="height:60px;"><br>
-        <span style="color:white;font-size:20px;">HDS Interne</span>
-      </div>
+      <div class="header-app">
+  <img src="/icon.png" alt="Logo HDS"><br>
+  <div class="titre">HDS Interne</div>
+</div>
 
       ${message ? `<div class="${message.startsWith('ERREUR') ? 'message-ko' : 'message-ok'}">${message}</div>` : ''}
 
