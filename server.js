@@ -156,13 +156,7 @@ function pageConnexion(message = '') {
       </style>
     </head>
     <body>
-      <div class="menu-mobile">
-  <button onclick="showBloc('chantiers')">Chantiers</button>
-  <button onclick="showBloc('depenses')">Dépenses</button>
-  <button onclick="showBloc('interventions')">Interventions</button>
-  <button onclick="showBloc('photos')">Photos</button>
-  <button onclick="showBloc('reglages')">Réglages</button>
-</div>
+  
       <div class="header">
         <img src="/uploads/logo.jpg" alt="Logo Hydro Dom Solutions">
         <div class="titre">HDS Interne</div>
@@ -519,7 +513,7 @@ const htmlArchives = (data.archives || []).map(a => `
 `).join('') || '<p>Aucune photo</p>';
 
   const blocReglages = droits.reglages ? `
-    <div class="bloc">
+    <div class="bloc" id="reglages">
       <h3>Réglages</h3>
       <p>Pourcentage frais généraux automatique actuel : <strong>${pourcentageFraisGeneraux}%</strong></p>
       <input id="r_frais_generaux" placeholder="Pourcentage frais généraux" value="${pourcentageFraisGeneraux}">
@@ -568,7 +562,7 @@ const htmlArchives = (data.archives || []).map(a => `
   ` : '';
 
   const blocPlanning = droits.interventions ? `
-    <div class="bloc">
+    <div class="bloc" id="planning">
       <h3>Planning des interventions</h3>
 
       <p>
@@ -696,7 +690,7 @@ const htmlArchives = (data.archives || []).map(a => `
   ` : '';
 
   const blocFeuillesHeures = droits.feuillesHeures ? `
-    <div class="bloc">
+    <div class="bloc" id="feuillesHeures">
       <h3>Feuille d’heure</h3>
       <p>Prix heure Cadre : <strong>${prixHeureCadre} €</strong> | Prix heure Technicien : <strong>${prixHeureTechnicien} €</strong></p>
 
@@ -838,7 +832,7 @@ const htmlArchives = (data.archives || []).map(a => `
   ` : '';
 
   const blocSuivi = droits.depenses ? `
-    <div class="bloc">
+    <div class="bloc" id="suivi">
       <h3>Suivi par chantier</h3>
       ${htmlSuiviChantier}
     </div>
@@ -924,9 +918,51 @@ button:hover { opacity:0.9; }
           border-radius:8px;
           border:1px solid #fecaca;
         }
+
+ .menu-mobile {
+  display:flex;
+  overflow-x:auto;
+  gap:6px;
+  background:#1e293b;
+  padding:10px;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+
+.menu-mobile button {
+  min-width:110px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:8px;
+  padding:10px;
+  font-size:14px;
+}
+
+@media (max-width: 700px) {
+  .bloc {
+    margin:10px;
+    padding:15px;
+  }
+
+  .top {
+    display:block;
+    text-align:center;
+  }
+}
       </style>
     </head>
     <body>
+        <div class="menu-mobile">
+  <button onclick="showBloc('reglages')">Réglages</button>
+  <button onclick="showBloc('planning')">Planning</button>
+  <button onclick="showBloc('chantiers')">Chantiers</button>
+  <button onclick="showBloc('depenses')">Dépenses</button>
+  <button onclick="showBloc('feuillesHeures')">Heures</button>
+  <button onclick="showBloc('interventions')">Interventions</button>
+  <button onclick="showBloc('photos')">Photos</button>
+</div>
       <div style="text-align:center; background:#1e293b; padding:15px;">
         <img src="/uploads/logo.jpg" style="height:60px;"><br>
         <span style="color:white;font-size:20px;">HDS Interne</span>
@@ -951,14 +987,6 @@ button:hover { opacity:0.9; }
       ${blocPhotos}
 
       <script>
-      function showBloc(id) {
-  const blocs = document.querySelectorAll('.bloc');
-  blocs.forEach(b => b.style.display = 'none');
-
-  const actif = document.getElementById(id);
-  if (actif) actif.style.display = 'block';
-}
-
         function send(url, data) {
           fetch(url, {
             method: 'POST',
@@ -2204,6 +2232,7 @@ const reste = totalMarche - totalDepenses;
     <html>
     <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Dossier archivé</title>
       <style>
        .menu-mobile {
