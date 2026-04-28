@@ -1545,6 +1545,10 @@ function showBloc(id) {
     actif.style.display = 'block';
   }
 }
+
+window.onload = function() {
+  showBloc('chantiers');
+}
       </script>
     </body>
     </html>
