@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(session({
-  secret: 'hds-secret',
+  secret: 'HDS-2025-securite-interne-971-tres-long',
   resave: false,
   saveUninitialized: false
 }));
@@ -18,6 +18,15 @@ app.use(session({
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+app.get('/data.json', (req, res) => {
+  res.status(403).send('Accès interdit');
+});
+
+app.get('/backup.json', (req, res) => {
+  res.status(403).send('Accès interdit');
+});
+
 app.use(express.static(__dirname));
 
 const storage = multer.diskStorage({
